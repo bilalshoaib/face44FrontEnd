@@ -1,0 +1,53 @@
+<div class="main-panel">
+        <!-- <app-header></app-header> -->
+        <div class="content marginTop">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header" data-background-color="purple">
+                    <h4 class="title">User</h4>
+                    <p class="category">Add User</p>
+                  </div>
+                  <div class="card-content">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group label-floating">
+                            <label class="control-label">Name</label>
+                            <input type="text" class="form-control" [(ngModel)]="name" name="name" required="required">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group label-floating">
+                            <label class="control-label">Email</label>
+                            <input type="email" class="form-control" [(ngModel)]="email" name="email" required="required">
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group label-floating">
+                            <label class="control-label">Adress</label>
+                            <input type="text" class="form-control" [(ngModel)]="address" name="address" required="required">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group label-floating">
+                            <label class="control-label">Phone</label>
+                            <input type="text" class="form-control" [(ngModel)]="phone" name="phone" required="required">
+                          </div>
+                        </div>
+                      </div>
+      
+                      <button type="button" class="btn btn-primary pull-right" (click)="addUser()">Save</button>
+                      <div class="clearfix"></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

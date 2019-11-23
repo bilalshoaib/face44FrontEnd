@@ -1,0 +1,22 @@
+<p>list-users works!</p>
+<img src="../../assets/giphy (1).gif" alt="" *ngIf="loader" style="position: fixed; top: 20%; left: 35%; right: 5%;">
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let obj of users">
+        <td>{{obj.U_name}}</td>
+        <td>{{obj.email}}</td>
+        <td>{{obj.address}}</td>
+        <td>{{obj.phone}}</td>
+        <td>
+            <button class="btn btn-danger" (click)="delete(obj.id)">Delete</button>
+            <button class="btn btn-primary" (click)="edit(obj.id)">Edit</button>
+        </td>
+    </tr>
+</table>
+
