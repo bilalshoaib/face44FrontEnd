@@ -30,8 +30,28 @@ export class CreateUserComponent implements OnInit {
           this.getSingleUser();
         }
   }
+  validation(){
+    if(this.name == null || this.name == ''){
+      this.roastr.warning("Name: ", "Name required" );
+      return false;
+    }
+    if(this.email == null || this.email == ''){
+      this.roastr.warning("Email: ", "Email required" );
+      return false;
+    }
+    if(this.address == null || this.address == ''){
+      this.roastr.warning("Address: ", "Address required" );
+      return false;
+    }
+    if(this.phone == null || this.phone == ''){
+      this.roastr.warning("phone: ", "phone required" );
+      return false;
+    }
+    return true;
+  }
   addUser(){
     this.message = '';
+    if(this.validation()){
    if(this.id) {
     const obj = {
       id: this.id,
@@ -49,7 +69,7 @@ export class CreateUserComponent implements OnInit {
       phone: this.phone
       }
      this.saveUser(obj);
-     
+    }
    }
 
   }
@@ -63,7 +83,7 @@ export class CreateUserComponent implements OnInit {
         this.address = '';
         this.phone = '';
         this.message = data.message;
-        this.rout.navigate(['/ListUserComponent'])
+        this.rout.navigate(['/'])
         this.roastr.success('user created')
 
       },
@@ -76,17 +96,17 @@ export class CreateUserComponent implements OnInit {
   updateUser(obj) {
     this.service.updateuser(obj).subscribe(
       (data: any)=>{
-        console.log(data);
         this.name = '';
         this.email = '';
         this.address = '';
         this.phone = '';
         this.message = data.message;
-        this.rout.navigate(['/ListUserComponent'])
+        this.rout.navigate(['/'])
         this.roastr.success('user updated')
 
       },
       (error)=>{
+        console.log('error block');
         console.log(error);
       }
     );

@@ -8,11 +8,10 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class UserServicesService {
 
-   private url = "http://localhost:8012/face44/";
+   private url = "http://localhost:8012/face44Tasks/";
    private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'jwt-token'
+      'Content-Type':  'text/plain'
     })
   };
   constructor(private http: HttpClient) { }

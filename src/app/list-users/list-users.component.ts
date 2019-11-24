@@ -20,7 +20,6 @@ export class ListUsersComponent implements OnInit {
   }
 
   ngOnInit() {
-  
     this.getUsers();
   }
 

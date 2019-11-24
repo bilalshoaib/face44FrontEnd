@@ -32,7 +32,7 @@ import { MenuComponent } from './menu/menu.component';
     ToastrModule.forRoot(), // ToastrModule added
     RouterModule.forRoot([
       {
-        path: 'ListUserComponent',
+        path: '',
         component: ListUsersComponent
       },
       {
